@@ -12,20 +12,30 @@ let sigils = document.querySelectorAll('.sigilContainer'),
 	lightbox = document.querySelector('.lightbox'),
 	closeLightBoxButton = document.querySelector('.close-lightbox'),
 	vidPlayer = document.querySelector('video'),
-	pausePlay = document.querySelector('.controls');
+	pausePlay = document.querySelector('.controls'),
+	imageBanner = document.querySelector('#houseImages');
 
 //functions in the middle
-function showHouseVideo() {
+function vidInit() {
 	// houseName variable, is second class of clicked button, ran through Capitalization function
 	let houseName = this.className.split(' ')[1].capIt();
+	let vidSource = vidPlayer.currentSrc.split('.')[1];
 	// set the h1 to our clicked houseName
 	document.querySelector('h1').textContent = `House ${houseName}`;
   	//debugger;
   	lightbox.classList.add('show-lightbox');
-  	//play the video
-  	// vidPlayer.src = `video/House-${houseName}.${vidPlayer.currentSrc.split('.')[1]}`;
-  	// vidPlayer.load();
+  	vidPlayer.src = `video/House-${houseName}.${vidSource}`;
+  	vidPlayer.load();
   	vidPlayer.play();
+
+  	scrollBanners(this.dataset.offset);
+}
+
+function scrollBanners(offset) {
+	//move the banner image to the left
+	let moveIt = offset * 600 + "px";
+
+	imageBanner.style.right = moveIt;
 }
 
 function closeLightBox() {
@@ -49,7 +59,7 @@ function controlFunc() {
 }
 
 // event handelling at the bottomNav
-sigils.forEach(sigil => sigil.addEventListener('click', showHouseVideo));
+sigils.forEach(sigil => sigil.addEventListener('click', vidInit));
 closeLightBoxButton.addEventListener('click', closeLightBox);
 vidPlayer.addEventListener('ended',closeLightBox);
 pausePlay.addEventListener('click',controlFunc);
