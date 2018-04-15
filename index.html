@@ -1,5 +1,4 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <title>DOM Traversal</title>
@@ -12,7 +11,6 @@
 
 <body>
     <main>
-
     <section id="imageContainer">
     	<div id="houseImages"> <!-- add in all of the images to make a scrolling "banner" -->
     		<img src="images/stark.jpg"/>
@@ -21,6 +19,8 @@
     		<img src="images/tully.jpg"/>
     		<img src="images/greyjoy.jpg"/>
     		<img src="images/arryn.jpg"/>
+            <img src="images/frey.jpg"/>
+            <img src="images/targaryen.jpg"/>
         </div>
     </section>
 
@@ -33,24 +33,31 @@
             <li><div class="sigilContainer tully" data-offset="3"></div></li>
             <li><div class="sigilContainer greyjoy" data-offset="4"></div></li>
             <li><div class="sigilContainer arryn" data-offset="5"></div></li>
+            <li><div class="sigilContainer frey" data-offset="6"></div></li>
+            <li><div class="sigilContainer targaryen" data-offset="7"></div></li>
+      ></div></li>
         </ul>
     </nav>
 
-    <h1 class='tagline'>clever tagline goes here</h1><!-- replace this with the house name -->
+    <h1 class='tagline'>Information on the Game of Thrones Houses</h1><!-- replace this with the house name -->
 
-    <p class="house-info"></p><!-- replace this with house details (github gist for details) -->
+    <p class="house-info">Click the Sigils to learn more</p><!-- replace this with house details (github gist for details) -->
 </main>
 
 <section class="lightbox">
     <span class="close-lightbox">x</span>
     <!-- add video here with sources for fallback / standards -->
-    <video autoplay>
+    <video autostart="0">
         <source src="video/House-Stark.mp4" type="video/mp4">
     </video>
 
-    <div class="controls">
+    <div class="pause control">
         <i class="fas fa-pause-circle"></i>
     </div>
+    <div class="volumeChange control">
+        <i class="fas fa-volume-off"></i>
+    </div>
+            
 
 </section>
 

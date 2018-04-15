@@ -19,6 +19,17 @@ h1 {
 	color:white;
 	margin-top:30px;
 	font-size:1.25em;
+	letter-spacing: 3px; 
+}
+
+p {
+	font-family: 'GOT_font';
+	color:white;
+	margin-top:30px;
+	font-size:1.05em;
+	letter-spacing: 3px;
+	line-height: 1.75em;
+	margin-bottom: 20px;
 }
 
 main {
@@ -38,7 +49,7 @@ main {
 	overflow:hidden;
 }
 
-#houseImages { position:relative; width:4000px; transition: all .5s; }
+#houseImages { position:relative; width:5200px; transition: all .5s; }
 #houseImages img { float:left; }
 
 #bottomNav { margin-top:30px; }
@@ -82,6 +93,12 @@ main {
 
 .arryn { background-position:-253px -54px; }
 .arryn:hover { background-position:-253px 0px; }
+
+.frey { background-position:-304px -54px; }
+.frey:hover { background-position:-304px 0px; }
+
+.targaryen { background-position:-355px -54px; }
+.targaryen:hover { background-position:-355px 0px; }
 /* ----- end image sprite ----- */
 
 /* ----- classes for transitions ----- */
@@ -105,7 +122,7 @@ main {
 	position: absolute;
 	top: 0;
 	width: 100%;
-	height: 100%;
+	height: 150%;
 	text-align: center;
 	background-color: rgba(0,0,0,0.95);
 }
@@ -123,22 +140,55 @@ main {
 
 .show-lightbox {
   display: block;
+  animation-name: loadIn;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+
+
+@keyframes loadIn {
+	0% {opacity: 0;}
+	30% {opacity: 0}
+	100% {opacity: 1;}
+}
+
+.wrapper
+{
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
 }
 
 video {
 	width: 80%;
 	margin-top: 10%;
 	border: thin solid #949393;
+	margin-bottom: 12px;
 }
 
-.controls {
+.control {
 	padding: 2em 0;
-	border: thin dashed white;
 
 }
+
+
+
+
 
 [data-icon] {
 	font-size: 3em;
 	color: white;
 	cursor: pointer;
 }
+
+button{
+	padding: 5px 8px;
+	font-size: 1.5em;
+	border-radius: 8px;
+	cursor: pointer;
+	margin-right: 12px;
+	margin-bottom: 12px;
+}
+
